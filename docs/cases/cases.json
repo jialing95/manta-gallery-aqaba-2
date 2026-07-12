@@ -1,0 +1,26 @@
+[
+  {
+    "id": "aqaba_lsd_nc8_angm40",
+    "title": "Aqaba LSD NC8 angm40",
+    "label": "LSD NC8 angm40",
+    "card_description": "Interactive 3D view of landslide tsunami case AQA_005_K1_NC8_angm40_mixed in the Gulf of Aqaba.",
+    "overview": "Aqaba LSD NC8 angm40 is an interactive 3D D-Claw landslide-tsunami case for the Gulf of Aqaba, exported from AQA_005_K1_NC8_angm40_mixed. The viewer combines a static high-resolution topo-bathymetric surface with time-dependent water height and landslide fields for browser-side exploration. This web demo uses every second native output frame to keep the GitHub Pages payload compact while preserving the animation.",
+    "default_frame_index": 10
+  },
+  {
+    "id": "aqaba_lse_c10_angm40",
+    "title": "Aqaba LSE C10 angm40",
+    "label": "LSE C10 angm40",
+    "card_description": "Interactive 3D view of landslide tsunami case AQA_020_K1_C10_angm40_mixed in the Gulf of Aqaba.",
+    "overview": "Aqaba LSE C10 angm40 is an interactive 3D D-Claw landslide-tsunami case for the Gulf of Aqaba, exported from AQA_020_K1_C10_angm40_mixed. The viewer combines a static high-resolution topo-bathymetric surface with time-dependent water height and landslide fields for browser-side exploration. This web demo uses every second native output frame to keep the GitHub Pages payload compact while preserving the animation.",
+    "default_frame_index": 10
+  },
+  {
+    "id": "aqaba_lsf_nc10_angm30",
+    "title": "Aqaba LSF NC10 angm30",
+    "label": "LSF NC10 angm30",
+    "card_description": "Interactive 3D view of landslide tsunami case AQA_008_K1_NC10_angm30_mixed in the Gulf of Aqaba.",
+    "overview": "Aqaba LSF NC10 angm30 is an interactive 3D D-Claw landslide-tsunami case for the Gulf of Aqaba, exported from AQA_008_K1_NC10_angm30_mixed. The viewer combines a static high-resolution topo-bathymetric surface with time-dependent water height and landslide fields for browser-side exploration. This web demo uses every second native output frame to keep the GitHub Pages payload compact while preserving the animation.",
+    "default_frame_index": 10
+  }
+]

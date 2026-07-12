@@ -1,0 +1,763 @@
+{
+  "id": "aqaba_lse_c10_angm40",
+  "title": "Aqaba LSE C10 angm40",
+  "description": "Aqaba LSE C10 angm40 time-series D-Claw export with water height and landslide material fields.",
+  "source": {
+    "kind": "fort",
+    "case_dir": "AQA_020_K1_C10_angm40_mixed",
+    "raw_output": "not included"
+  },
+  "time": {
+    "mode": "time_series",
+    "unit": "s",
+    "values": [
+      0.0,
+      4.0,
+      8.0,
+      12.0,
+      16.0,
+      20.0,
+      24.0,
+      28.0,
+      32.0,
+      36.0,
+      40.0,
+      44.0,
+      48.0,
+      52.0,
+      56.0,
+      60.0,
+      70.0,
+      80.0,
+      90.0,
+      100.0,
+      110.0,
+      120.0,
+      130.0,
+      140.0,
+      150.0,
+      160.0,
+      170.0,
+      180.0,
+      190.0,
+      200.0,
+      210.0,
+      220.0,
+      230.0,
+      240.0,
+      250.0,
+      260.0,
+      270.0,
+      280.0,
+      290.0,
+      300.0,
+      420.0,
+      540.0,
+      660.0,
+      780.0,
+      900.0,
+      1020.0,
+      1140.0,
+      1260.0,
+      1380.0,
+      1500.0,
+      1620.0,
+      1740.0,
+      1860.0,
+      1980.0,
+      2100.0,
+      2220.0,
+      2340.0,
+      2460.0,
+      2580.0,
+      2700.0,
+      2820.0,
+      2940.0,
+      3060.0,
+      3180.0,
+      3300.0,
+      3420.0,
+      3540.0,
+      3600.0
+    ],
+    "default_index": 10,
+    "frame_count": 68,
+    "native_indices": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42,
+      44,
+      46,
+      48,
+      50,
+      52,
+      54,
+      56,
+      58,
+      60,
+      62,
+      64,
+      66,
+      68,
+      70,
+      72,
+      74,
+      76,
+      78,
+      80,
+      82,
+      84,
+      86,
+      88,
+      90,
+      92,
+      94,
+      96,
+      98,
+      100,
+      102,
+      104,
+      106,
+      108,
+      110,
+      112,
+      114,
+      116,
+      118,
+      120,
+      122,
+      124,
+      126,
+      128,
+      130,
+      132,
+      133
+    ]
+  },
+  "layers": {
+    "terrain": {
+      "file": "terrain.vtp",
+      "visible": true,
+      "time_varying": false,
+      "style": {
+        "mode": "sea_split",
+        "below_sea_level": {
+          "label": "Bathymetry",
+          "colormap": "cmocean.deep"
+        },
+        "above_sea_level": {
+          "label": "Topography",
+          "colormap": "cmcrameri.grayC",
+          "relief": true
+        }
+      }
+    },
+    "water": {
+      "file_pattern": "water/frame_{frame}.vtp",
+      "compact": {
+        "version": 2,
+        "compression": "gzip",
+        "endianness": "little",
+        "point_count": 1029672,
+        "cell_count": 998596,
+        "template": {
+          "file": "water/template.bin.gz",
+          "header_bytes": 16,
+          "uncompressed_bytes": 24214928,
+          "compressed_bytes": 5583802,
+          "arrays": {
+            "x": {
+              "dtype": "float32",
+              "byte_offset": 16,
+              "length": 1029672
+            },
+            "y": {
+              "dtype": "float32",
+              "byte_offset": 4118704,
+              "length": 1029672
+            },
+            "quads": {
+              "dtype": "uint32",
+              "byte_offset": 8237392,
+              "length": 3994384,
+              "components": 4
+            }
+          }
+        },
+        "frame": {
+          "file_pattern": "water/frame_{frame}.bin.gz",
+          "header_bytes": 16,
+          "arrays": {
+            "z": {
+              "dtype": "float32",
+              "byte_offset": 16,
+              "length": 1029672
+            },
+            "wave_amplitude": {
+              "dtype": "float32",
+              "byte_offset": 4118704,
+              "length": 1029672
+            },
+            "m": {
+              "dtype": "float32",
+              "byte_offset": 8237392,
+              "length": 1029672
+            },
+            "h": {
+              "dtype": "float32",
+              "byte_offset": 12356080,
+              "length": 1029672
+            },
+            "u": {
+              "dtype": "float32",
+              "byte_offset": 16474768,
+              "length": 1029672
+            },
+            "v": {
+              "dtype": "float32",
+              "byte_offset": 20593456,
+              "length": 1029672
+            },
+            "valid_cells": {
+              "dtype": "uint8",
+              "byte_offset": 24712144,
+              "length": 124825,
+              "bit_order": "big"
+            }
+          }
+        }
+      },
+      "visible": true,
+      "time_varying": true,
+      "display_scalar": "wave_amplitude",
+      "filter_scalar": "m",
+      "filter_rule": "m <= water_m",
+      "default_m": 0.3,
+      "m_range": [
+        0.0,
+        1.0
+      ],
+      "m_threshold_applied_at_export": false,
+      "label": "Wave amplitude",
+      "unit": "m",
+      "colormap": "dclaw.tsunami",
+      "colormap_label": "Tsunami",
+      "colorbar": {
+        "side": "right",
+        "range": [
+          -3.656,
+          3.656
+        ],
+        "display_range": [
+          -3.656,
+          3.656
+        ],
+        "range_label": "robust p99.9",
+        "range_mode": "fixed_symmetric_ocean_default_water_m_abs_percentile",
+        "statistics": {
+          "type": "symmetric_abs_percentile",
+          "abs_percentile": 99.9,
+          "scope": "points in default-visible cells with b = z - h <= sea_level and m <= default_m",
+          "ocean_default_m_range": [
+            -24.79205894470215,
+            47.814796447753906
+          ],
+          "ocean_default_m_display_range": [
+            -3.656,
+            3.656
+          ],
+          "ocean_default_m_raw_range": [
+            -24.79205894470215,
+            47.814796447753906
+          ],
+          "raw_exported_range": [
+            -98.18841552734375,
+            99.97329711914062
+          ]
+        }
+      },
+      "analysis_overlays": {
+        "inundation": {
+          "scalar": "h",
+          "label": "Inundation depth relative to sea level",
+          "unit": "m",
+          "condition": "b >= sea_level, where b = z - h",
+          "water_m_bound": true,
+          "range": [
+            0.0005000012461096048,
+            15.238208770751953
+          ],
+          "colormap": "fgmax_inundation_depth_classes"
+        },
+        "velocity": {
+          "components": [
+            "u",
+            "v"
+          ],
+          "label": "Wave velocity",
+          "unit": "m/s",
+          "water_m_bound": true,
+          "range": [
+            0.0,
+            41.507049560546875
+          ],
+          "arrow_colormap": "turbo",
+          "maximum_colormap": "cmocean.speed",
+          "arrow_stride": 1,
+          "arrow_scale": 10.0,
+          "arrow_max_count": 20000,
+          "arrow_min_speed": 0.01
+        }
+      }
+    },
+    "landslide": {
+      "file_pattern": "landslide/frame_{frame}.vtp",
+      "compact": {
+        "version": 2,
+        "compression": "gzip",
+        "endianness": "little",
+        "point_count": 16478,
+        "cell_count": 16218,
+        "template": {
+          "file": "landslide/template.bin.gz",
+          "header_bytes": 16,
+          "uncompressed_bytes": 391328,
+          "compressed_bytes": 83664,
+          "arrays": {
+            "x": {
+              "dtype": "float32",
+              "byte_offset": 16,
+              "length": 16478
+            },
+            "y": {
+              "dtype": "float32",
+              "byte_offset": 65928,
+              "length": 16478
+            },
+            "quads": {
+              "dtype": "uint32",
+              "byte_offset": 131840,
+              "length": 64872,
+              "components": 4
+            }
+          }
+        },
+        "frame": {
+          "file_pattern": "landslide/frame_{frame}.bin.gz",
+          "header_bytes": 16,
+          "arrays": {
+            "z": {
+              "dtype": "float32",
+              "byte_offset": 16,
+              "length": 16478
+            },
+            "hm": {
+              "dtype": "float32",
+              "byte_offset": 65928,
+              "length": 16478
+            },
+            "m": {
+              "dtype": "float32",
+              "byte_offset": 131840,
+              "length": 16478
+            },
+            "db": {
+              "dtype": "float32",
+              "byte_offset": 197752,
+              "length": 16478
+            },
+            "valid_cells": {
+              "dtype": "uint8",
+              "byte_offset": 263664,
+              "length": 2028,
+              "bit_order": "big"
+            }
+          }
+        }
+      },
+      "visible": true,
+      "time_varying": true,
+      "filter_scalar": "m",
+      "filter_rule": "m >= landslide_m",
+      "default_m": 0.0,
+      "m_range": [
+        0.0,
+        1.0
+      ],
+      "default_scalar": "hm",
+      "colormap": "magma",
+      "colorbar": {
+        "side": "left"
+      },
+      "available_scalars": {
+        "hm": {
+          "label": "hm (solid thickness)",
+          "unit": "m",
+          "range": [
+            1.0004216619563522e-06,
+            356.9158630371094
+          ]
+        },
+        "m": {
+          "label": "m (solid fraction)",
+          "unit": "1",
+          "range": [
+            0.0,
+            1.0
+          ]
+        },
+        "db": {
+          "label": "Δb (bed change)",
+          "unit": "m",
+          "range": [
+            -122.48114013671875,
+            76.39636993408203
+          ]
+        }
+      }
+    },
+    "amr": {
+      "file_pattern": "amr/frame_{frame}.json",
+      "visible": false,
+      "time_varying": true,
+      "label": "FORT AMR diagnostics",
+      "mode": "patch_outlines",
+      "description": "Header-only FORT AMR patch outlines exported from fort.q####.",
+      "level_counts_global": {
+        "1": 136,
+        "2": 13689,
+        "3": 12284
+      }
+    }
+  },
+  "ui": {
+    "show_layer_toggles": true,
+    "show_time_slider": true,
+    "show_play_button": true,
+    "show_water_m_slider": true,
+    "show_landslide_m_slider": true,
+    "show_landslide_scalar_selector": true,
+    "show_colormap_controls": false,
+    "show_dem_style_controls": false,
+    "show_vertical_exaggeration": false,
+    "show_amr_overlay": true
+  },
+  "camera": {
+    "preset": "oblique"
+  },
+  "processing": {
+    "sea_level": 0.0,
+    "crs": {
+      "epsg": 32637,
+      "name": "WGS 84 / UTM zone 37N",
+      "type": "projected",
+      "projection": "UTM",
+      "utm_zone": 37,
+      "hemisphere": "N",
+      "unit": "m"
+    },
+    "export_frame_mode": "all",
+    "export_frame_step": 2,
+    "vtp_float_dtype": "float32",
+    "browser_asset_format": "compact_v2",
+    "stride": {
+      "terrain": 5,
+      "water": 10,
+      "water_coastal_detail": 0,
+      "landslide": 0
+    },
+    "landslide_roi": {
+      "enabled": true,
+      "type": "global_union_over_frames",
+      "hm_eps": 1e-06,
+      "pad_cells": 24,
+      "roi_rc_exclusive": [
+        2823,
+        2977,
+        1753,
+        1860
+      ],
+      "scan": {
+        "mode": "all",
+        "frame_step": 2,
+        "frame_indices": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30,
+          32,
+          34,
+          36,
+          38,
+          40,
+          42,
+          44,
+          46,
+          48,
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68,
+          70,
+          72,
+          74,
+          76,
+          78,
+          80,
+          82,
+          84,
+          86,
+          88,
+          90,
+          92,
+          94,
+          96,
+          98,
+          100,
+          102,
+          104,
+          106,
+          108,
+          110,
+          112,
+          114,
+          116,
+          118,
+          120,
+          122,
+          124,
+          126,
+          128,
+          130,
+          132,
+          133
+        ],
+        "valid_counts": {
+          "0": 737,
+          "2": 1012,
+          "4": 1221,
+          "6": 1443,
+          "8": 1597,
+          "10": 1725,
+          "12": 1770,
+          "14": 1815,
+          "16": 1836,
+          "18": 1887,
+          "20": 1845,
+          "22": 1885,
+          "24": 1873,
+          "26": 1857,
+          "28": 1888,
+          "30": 1852,
+          "32": 1864,
+          "34": 1905,
+          "36": 1942,
+          "38": 1942,
+          "40": 2029,
+          "42": 2014,
+          "44": 1988,
+          "46": 1989,
+          "48": 2052,
+          "50": 2049,
+          "52": 2046,
+          "54": 2085,
+          "56": 2120,
+          "58": 2056,
+          "60": 2070,
+          "62": 2096,
+          "64": 2070,
+          "66": 2106,
+          "68": 2097,
+          "70": 2065,
+          "72": 2134,
+          "74": 2104,
+          "76": 2123,
+          "78": 2096,
+          "80": 2045,
+          "82": 2120,
+          "84": 2053,
+          "86": 2070,
+          "88": 1968,
+          "90": 1961,
+          "92": 1946,
+          "94": 1907,
+          "96": 1849,
+          "98": 1816,
+          "100": 1831,
+          "102": 1804,
+          "104": 1792,
+          "106": 1794,
+          "108": 1775,
+          "110": 1748,
+          "112": 1759,
+          "114": 1778,
+          "116": 1749,
+          "118": 1773,
+          "120": 1781,
+          "122": 1779,
+          "124": 1774,
+          "126": 1793,
+          "128": 1790,
+          "130": 1787,
+          "132": 1832,
+          "133": 1824
+        },
+        "valid_frame_count": 68,
+        "roi_shape": [
+          6615,
+          2685
+        ]
+      }
+    },
+    "water_surface": {
+      "description": "Colored by wave amplitude; m is preserved for browser-side thresholding.",
+      "dry_tolerance": 0.0005,
+      "coastal_detail": {
+        "enabled": true,
+        "coastline_elevation_m": 0.0,
+        "offshore_width_m": 100.0,
+        "inland_width_m": 500.0,
+        "stride": 0,
+        "stride_meaning": "native_resolution",
+        "row_spacing_m": 30.011177347041667,
+        "col_spacing_m": 30.011177347245393,
+        "shoreline_point_count": 60333,
+        "coastal_point_count": 540273,
+        "fine_cell_count": 828820,
+        "coarse_cell_count": 169776
+      },
+      "ocean_base_gate": {
+        "enabled": false,
+        "b0_max": 0.0
+      },
+      "m_threshold_applied_at_export": false,
+      "amplitude_outlier_guard": {
+        "enabled": false,
+        "hard_abs_limit": 100.0,
+        "percentile": 99.0,
+        "factor": 6.0,
+        "min_limit": 10.0,
+        "per_browser_frame_limit": {
+          "0": null,
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null,
+          "6": null,
+          "7": null,
+          "8": null,
+          "9": null,
+          "10": null,
+          "11": null,
+          "12": null,
+          "13": null,
+          "14": null,
+          "15": null,
+          "16": null,
+          "17": null,
+          "18": null,
+          "19": null,
+          "20": null,
+          "21": null,
+          "22": null,
+          "23": null,
+          "24": null,
+          "25": null,
+          "26": null,
+          "27": null,
+          "28": null,
+          "29": null,
+          "30": null,
+          "31": null,
+          "32": null,
+          "33": null,
+          "34": null,
+          "35": null,
+          "36": null,
+          "37": null,
+          "38": null,
+          "39": null,
+          "40": null,
+          "41": null,
+          "42": null,
+          "43": null,
+          "44": null,
+          "45": null,
+          "46": null,
+          "47": null,
+          "48": null,
+          "49": null,
+          "50": null,
+          "51": null,
+          "52": null,
+          "53": null,
+          "54": null,
+          "55": null,
+          "56": null,
+          "57": null,
+          "58": null,
+          "59": null,
+          "60": null,
+          "61": null,
+          "62": null,
+          "63": null,
+          "64": null,
+          "65": null,
+          "66": null,
+          "67": null
+        }
+      }
+    },
+    "landslide_surface": "Cropped to global landslide ROI, colored by hm, m, or Δb, and filtered by browser-side landslide solid-fraction cutoff.",
+    "amr": {
+      "enabled": true,
+      "source": "FORT fort.q#### headers",
+      "file_pattern": "amr/frame_{frame}.json",
+      "frame_count": 68,
+      "export_mode": "header_only_sidecar_json",
+      "level_counts_global": {
+        "1": 136,
+        "2": 13689,
+        "3": 12284
+      }
+    }
+  }
+}

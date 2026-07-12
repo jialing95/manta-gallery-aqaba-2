@@ -1,0 +1,14 @@
+---
+title: "MANTA Gallery"
+---
+
+MANTA Gallery is a collection of 3D pyvista-based interactive visualizations of landslide tsunami modeled by D-Claw. (MANTA: Modelling & Analytics for Nonlinear Tsunami Applications Platform is under development.)
+
+## Core visualization concept
+
+- Landslide material: hm, m, or Δb using magma
+- Separate solid-fraction thresholds for water-like and landslide-dominated regions
+
+## Gallery status
+
+This repository is used as paper supplements.

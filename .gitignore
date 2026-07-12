@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Node / viewer build
+node_modules/
+viewer/dist/
+docs/assets/js/*viewer.bundle.js
+docs/assets/js/*viewer.*.js
+
+# Quarto
+.quarto/
+_site/
+
+# Raw simulation outputs: never commit
+_output/
+_plots/
+fort.q*
+fort.t*
+fgout/
+fgmax/
+*.nc
+*.h5
+*.hdf5
+*.tif
+*.tiff
+
+# Large accidental exports
+*.vtk
+*.vtu
+*.pvd
+*.xdmf
+*.npz
+*.npy
+
+# Allow curated gallery data only
+!data/demo/**/*.vtp
+!data/demo/**/*.json
+!data/demo/**/*.png
+!data/demo/**/*.csv
+!data/demo/**/*.geojson
+!data/demo/**/*.bin.gz
+
+# Generated publish assets: CI syncs the canonical data/demo tree before render.
+docs/assets/data/demo/
+
+/.quarto/
+**/*.quarto_ipynb
+
+# Node / frontend
+node_modules/
+
+# Quarto build outputs
+docs/_site/
+_site/
+.quarto/
+
+# Local Python environment
+.venv/
+
+# Local patch-script backup files
+*.bak_*
